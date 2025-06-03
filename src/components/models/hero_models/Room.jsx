@@ -44,13 +44,17 @@ export function Room(props) {
 
   return (
     <group {...props} dispose={null}>
+      {/* LUCES PARA BLOOM */}
+      <ambientLight intensity={0.7} />
+      <directionalLight position={[5, 10, 7.5]} intensity={1} />
+
       <EffectComposer>
         <SelectiveBloom
           selection={screensRef}
-          intensity={1.5} // Strength of the bloom
-          luminanceThreshold={0.2} // Minimum luminance needed
-          luminanceSmoothing={0.9} // Smooth transition
-          blendFunction={BlendFunction.ADD} // How it blends
+          intensity={1.5}
+          luminanceThreshold={0.2}
+          luminanceSmoothing={0.9}
+          blendFunction={BlendFunction.ADD}
         />
       </EffectComposer>
       <mesh
