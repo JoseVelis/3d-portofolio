@@ -188,7 +188,7 @@ section {
 }
 
 .hero-text .slide {
-  position: absolute;
+  position: relative; /* Cambiado de absolute a relative */
   padding-top: 0;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -239,6 +239,21 @@ section {
     right: -5rem;
     width: 70%;
   }
+}
+
+.hero-3d-container, .hero-3d-layout {
+  width: 60vw;
+  height: 60vh;
+  max-width: none;
+  max-height: none;
+  min-width: 0;
+  min-height: 0;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
 }
 
 .navbar {
@@ -542,13 +557,24 @@ section {
   padding-top: 1rem;
   padding-bottom: 1rem;
   border-radius: 0.5rem;
-  background-color: rgba(253, 253, 253, 0.959);
+  background: linear-gradient(90deg, #7f5af0 0%, #2cb67d 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   cursor: pointer;
   overflow: hidden;
+  box-shadow: 0 2px 12px rgba(127, 90, 240, 0.15);
+  transition: background 0.4s, transform 0.2s, box-shadow 0.2s;
+}
+
+.cta-button:hover {
+  background: linear-gradient(90deg, #2cb67d 0%, #7f5af0 100%);
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 6px 24px rgba(127, 90, 240, 0.25);
 }
 
 .cta-button .bg-circle {
@@ -1071,4 +1097,46 @@ form {
   height: 100%;
   object-fit: contain;        /* Mantiene proporción y rellena el espacio */
   display: block;
+}
+
+.animated-counter-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.animated-counter-item {
+  background: rgba(255,255,255,0.07);
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  min-width: 180px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.animated-counter-item:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+}
+
+.counter-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+.counter-label {
+  font-size: 1rem;
+  color: #b0b0b0;
+  margin-top: 0.5rem;
+  font-weight: 500;
 }

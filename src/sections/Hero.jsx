@@ -29,7 +29,7 @@ const Hero = () => {
         <header className="hero-text-container">
           <div className="hero-text">
             <h1 className="hero-heading">
-              Shaping
+              Shaping&nbsp;
               <span className="slide">
                 <span className="wrapper">
                   {words.map((word, index) => (
@@ -37,18 +37,18 @@ const Hero = () => {
                       key={index}
                       className="flex items-center gap-2 md:gap-3 pb-2"
                     >
-                 <img                    src={word.imgPath}
-                     alt="icon"
-                   className="word-icon"
-                />
-                 <span>{word.text}</span>
-                </span>
-                ))}
+                      <img
+                        src={word.imgPath}
+                        alt="icon"
+                        className="word-icon"
+                      />
+                      <span>{word.text}</span>
+                    </span>
+                  ))}
                 </span>
               </span>
+              &nbsp;into Real Projects that Deliver Results
             </h1>
-            <h1 className="hero-heading">into Real Projects</h1>
-            <h1 className="hero-heading">that Deliver Results</h1>
           </div>
 
           <p className="hero-description">
@@ -59,7 +59,7 @@ const Hero = () => {
           <Button
             text="See My Work"
             className="w-60 h-12 md:w-80 md:h-12"
-            id="counter"
+            targetId="work"
           />
         </header>
 
